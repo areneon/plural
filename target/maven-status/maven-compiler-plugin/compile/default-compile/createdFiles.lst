@@ -1,0 +1,10 @@
+patterns\prototype\Registry.class
+patterns\prototype\Movie.class
+patterns\prototype\Book.class
+patterns\singleton\DBLazySingleton.class
+patterns\singleton\DBSingleton.class
+main\Main$Z.class
+patterns\builder\LunchOrder.class
+main\Main.class
+patterns\builder\LunchOrder$Builder.class
+patterns\prototype\Item.class
