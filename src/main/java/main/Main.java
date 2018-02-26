@@ -172,6 +172,6 @@ static class Z{
 
         lista.stream().filter(value->!value.equals("2")).forEach(value->log.info("druga: "+value));
         List nowa = lista.stream().map(value->value.toUpperCase()).collect(Collectors.toList());
-        nowa.forEach(value->log.info("trzecia: "+value));
+        nowa.forEach(value->log.info("trzecia3 : "+value));
     }
 }
