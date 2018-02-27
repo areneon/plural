@@ -41,6 +41,7 @@ public class Main {
         s=s(s);
         System.out.print(s);
         stream();
+        sortowanie();
     }
 
     private static String s(final String s){
@@ -173,5 +174,28 @@ static class Z{
         lista.stream().filter(value->!value.equals("2")).forEach(value->log.info("druga: "+value));
         List nowa = lista.stream().map(value->value.toUpperCase()).collect(Collectors.toList());
         nowa.forEach(value->log.info("trzecia3 : "+value));
+    }
+
+    private static void sortowanie(){
+        List<String> przedSortowaniem = Arrays.asList("b","a","2","f","z","c","1");
+        String[] animals = {"cat", "dog", "mouse", "rat", "pig", "rabbit", "hamster", "parrot"};
+
+        /**
+         omparator<String> sortByName =(String s1, String s2) -> (s1.compareTo(s2));
+
+         równa się to:
+
+         Comparator<String> s = new Comparator<String>() {
+        @Override
+        public int compare(String s1, String s2) {
+        return s1.compareTo(s2);
+        }
+        };
+         */
+        Comparator<String> sortByName =(String s1, String s2) -> (s1.compareTo(s2));
+        List<String> poSortowaniu = przedSortowaniem.stream().sorted(sortByName).collect(Collectors.toList());
+        poSortowaniu.stream().forEach(c->log.info("posortowana: "+c));
+
+
     }
 }
