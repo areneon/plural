@@ -1,13 +1,13 @@
 ----------------------------------------------------------------
-Mon Dec 04 21:34:50 CET 2017:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.1.0 - (1808820): instance a816c00e-0160-233d-07a5-00000e7386d0 
-on database directory memory:C:\Users\arkadiusz.ptak\InteliJ\Plural\codejava\wedb with class loader sun.misc.Launcher$AppClassLoader@18b4aac2 
-Loaded from file:/C:/Users/arkadiusz.ptak/.m2/repository/org/apache/derby/derby/10.14.1.0/derby-10.14.1.0.jar
+Sun Mar 04 20:09:48 CET 2018:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.1.0 - (1808820): instance a816c00e-0161-f26b-85c4-000002d1be88 
+on database directory memory:/home/cyga/git/plural/codejava/wedb with class loader sun.misc.Launcher$AppClassLoader@18b4aac2 
+Loaded from file:/home/cyga/.m2/repository/org/apache/derby/derby/10.14.1.0/derby-10.14.1.0.jar
 java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_111-b14
-user.dir=C:\Users\arkadiusz.ptak\InteliJ\Plural
-os.name=Windows 10
+java.runtime.version=1.8.0_161-b12
+user.dir=/home/cyga/git/plural
+os.name=Linux
 os.arch=amd64
-os.version=10.0
+os.version=4.13.0-36-generic
 derby.system.home=null
 Database Class Loader started - derby.database.classpath=''

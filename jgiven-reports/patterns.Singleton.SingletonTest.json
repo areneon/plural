@@ -1,0 +1,119 @@
+{
+  "className": "patterns.Singleton.SingletonTest",
+  "name": "Singleton",
+  "scenarios": [
+    {
+      "className": "patterns.Singleton.SingletonTest",
+      "testMethodName": "connect_db_test",
+      "description": "connect db test",
+      "tagIds": [],
+      "explicitParameters": [],
+      "derivedParameters": [],
+      "casesAsTable": false,
+      "scenarioCases": [
+        {
+          "caseNr": 1,
+          "steps": [
+            {
+              "name": "a connection",
+              "words": [
+                {
+                  "value": "Given",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "a connection"
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 1304181923
+            },
+            {
+              "name": "connection should be opened",
+              "words": [
+                {
+                  "value": "Then",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "connection should be opened"
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 1509561
+            }
+          ],
+          "explicitArguments": [],
+          "derivedArguments": [],
+          "success": true,
+          "durationInNanos": 1345035377
+        }
+      ],
+      "durationInNanos": 1345035377
+    },
+    {
+      "className": "patterns.Singleton.SingletonTest",
+      "testMethodName": "disconnect_db_test",
+      "description": "disconnect db test",
+      "tagIds": [],
+      "explicitParameters": [],
+      "derivedParameters": [],
+      "casesAsTable": false,
+      "scenarioCases": [
+        {
+          "caseNr": 1,
+          "steps": [
+            {
+              "name": "a connection",
+              "words": [
+                {
+                  "value": "Given",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "a connection"
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 611657
+            },
+            {
+              "name": "disconnect from DB",
+              "words": [
+                {
+                  "value": "When",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "disconnect from DB"
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 1296528
+            },
+            {
+              "name": "connection should be closed",
+              "words": [
+                {
+                  "value": "Then",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "connection should be closed"
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 1019807
+            }
+          ],
+          "explicitArguments": [],
+          "derivedArguments": [],
+          "success": true,
+          "durationInNanos": 6011562
+        }
+      ],
+      "durationInNanos": 6011562
+    }
+  ],
+  "tagMap": {}
+}
