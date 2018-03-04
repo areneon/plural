@@ -3,7 +3,7 @@ package patterns.prototype;
 /**
  * Created by Arkadiusz.Ptak on 07.12.2017.
  */
-public abstract class Item implements Cloneable{
+public class Item implements Cloneable{
     @Override
     protected Object clone() throws CloneNotSupportedException {
         return super.clone();

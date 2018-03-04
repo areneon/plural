@@ -2,6 +2,7 @@ package main;
 
 import lombok.extern.slf4j.Slf4j;
 import patterns.builder.LunchOrder;
+import patterns.decorator.*;
 import patterns.prototype.Movie;
 import patterns.prototype.Registry;
 import patterns.singleton.DBLazySingleton;
@@ -11,7 +12,6 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
@@ -31,7 +31,7 @@ public class Main {
     //lambda();
        // printer.accept("lambda");
       //  prototype();
-        Z z = new Z();
+     /*   Z z = new Z();
         z.updateA(null);
         String pusty= null;
         pusty=null;
@@ -41,7 +41,8 @@ public class Main {
         s=s(s);
         System.out.print(s);
         stream();
-        sortowanie();
+        sortowanie();*/
+        decorator();
     }
 
     private static String s(final String s){
@@ -197,5 +198,16 @@ static class Z{
         poSortowaniu.stream().forEach(c->log.info("posortowana: "+c));
 
 
+    }
+
+    public static void decorator(){
+        IHuman superHuman = new AquaMan(new Human(28, 187));
+        superHuman.breath();
+        superHuman = new SuperMan(superHuman);
+        superHuman.breath();
+       /* superHuman.breath();
+        superHuman.speak("jestem nadczlowiekiem");
+        superHuman.walk();*/
+        log.info("wzrost po booscie {}",superHuman.getWzrost());
     }
 }
