@@ -6,10 +6,12 @@ import java.sql.SQLException;
 
 /**
  * Created by Arkadiusz.Ptak on 04.12.2017.
+ *
+ *
  */
 public class DBLazySingleton {
 
-    private static DBLazySingleton instance = null;
+    private static DBLazySingleton instance = null; // nie tworzy odrazu wszystkich instancji przy starcie apki (performance)
     private Connection conn = null;
     private DBLazySingleton(){
 
@@ -21,8 +23,8 @@ public class DBLazySingleton {
     }
 
     public static DBLazySingleton getInstance(){
-        if(instance==null){
-                    synchronized (DBLazySingleton.class) {
+        if(instance==null){// nie tworzy odrazu wszystkich instancji przy starcie apki (performance)
+                    synchronized (DBLazySingleton.class) { //zabezpieczenie przy wielu watkach, zeby tylko 1sze odwolanie tworzylo
                         if(instance==null) {
                             instance = new DBLazySingleton();
                         }

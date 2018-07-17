@@ -10,7 +10,6 @@ public class LunchOrder {
     private final String condiments;
     private final String dressing;
     private final String mandatory;
-    private LunchOrder l;
 
     public static class Builder{
 
@@ -19,7 +18,6 @@ public class LunchOrder {
         private  String condiments;
         private  String dressing;
         private  String mandatory;
-
 
         private static final String DEFAULT_DRINK ="vodka";
         public Builder(String mandatory){

@@ -2,7 +2,9 @@ package main;
 
 import lombok.extern.slf4j.Slf4j;
 import patterns.builder.LunchOrder;
-import patterns.decorator.*;
+import patterns.factory.SiteType;
+import patterns.factory.Webside;
+import patterns.factory.WebsideFactory;
 import patterns.prototype.Movie;
 import patterns.prototype.Registry;
 import patterns.singleton.DBLazySingleton;
@@ -12,9 +14,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -31,7 +31,7 @@ public class Main {
     //lambda();
        // printer.accept("lambda");
       //  prototype();
-     /*   Z z = new Z();
+        Z z = new Z();
         z.updateA(null);
         String pusty= null;
         pusty=null;
@@ -41,10 +41,22 @@ public class Main {
         s=s(s);
         System.out.print(s);
         stream();
-        sortowanie();*/
-        decorator();
+        sortowanie();
+
+        Nowa n = new Nowa(1,2);
+        Nowa m = new Nowa(3,4);
+        List<Nowa> lista = Arrays.asList(n,m);
     }
 
+   static class Nowa{
+        int a;
+        int b;
+
+        Nowa(int a, int b){
+            this.a=a;
+            this.b=b;
+        }
+    }
     private static String s(final String s){
         if(s.equals("s")){
 
@@ -193,21 +205,27 @@ static class Z{
         }
         };
          */
+        Map<String,Integer> map = new HashMap<>();
+        map.put("1",2);
+
+        map.forEach((k,v)->log.info(k));
+
         Comparator<String> sortByName =(String s1, String s2) -> (s1.compareTo(s2));
         List<String> poSortowaniu = przedSortowaniem.stream().sorted(sortByName).collect(Collectors.toList());
         poSortowaniu.stream().forEach(c->log.info("posortowana: "+c));
+        String s1= null;
+        String s2="s";
+        int i1 =1;
+        Optional op = Optional.ofNullable(i1);
+       Optional.ofNullable(s2).ifPresent(System.out::println);
 
-
+        System.out.print(op.get());
     }
 
-    public static void decorator(){
-        IHuman superHuman = new AquaMan(new Human(28, 187));
-        superHuman.breath();
-        superHuman = new SuperMan(superHuman);
-        superHuman.breath();
-       /* superHuman.breath();
-        superHuman.speak("jestem nadczlowiekiem");
-        superHuman.walk();*/
-        log.info("wzrost po booscie {}",superHuman.getWzrost());
+    private static void factory(){
+        Webside webside = WebsideFactory.getWebside(SiteType.BLOG);
+
+        log.info(String.valueOf(webside.getPages()));
+
     }
 }
