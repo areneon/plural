@@ -1,6 +1,9 @@
 package main;
 
 import lombok.extern.slf4j.Slf4j;
+import patterns.abstractFactory.CardType;
+import patterns.abstractFactory.CreditCard;
+import patterns.abstractFactory.CreditCardAbstractFactory;
 import patterns.builder.LunchOrder;
 import patterns.factory.SiteType;
 import patterns.factory.Webside;
@@ -31,6 +34,7 @@ public class Main {
     //lambda();
        // printer.accept("lambda");
       //  prototype();
+        abstractFactory();
         Z z = new Z();
         z.updateA(null);
         String pusty= null;
@@ -227,5 +231,15 @@ static class Z{
 
         log.info(String.valueOf(webside.getPages()));
 
+    }
+
+    private static void abstractFactory(){
+        CreditCardAbstractFactory abstractFactory = CreditCardAbstractFactory.getCreditCardFactory(651);
+        CreditCard creditCard = abstractFactory.getCreditCard(CardType.GOLD);
+        log.info(String.valueOf(creditCard.getClass()));
+
+        abstractFactory = CreditCardAbstractFactory.getCreditCardFactory(200);
+        creditCard = abstractFactory.getCreditCard(CardType.PLATINUM);
+        log.info(String.valueOf(creditCard.getClass()));
     }
 }
